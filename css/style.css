@@ -1,0 +1,34 @@
+/* Milestone 1
+Replica della grafica con la possibilità di avere messaggi
+scritti dall’utente (verdi)
+e dall’interlocutore (bianco) assegnando due classi CSS diverse
+Visualizzazione dinamica della lista contatti:
+tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto */
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding:0;
+}
+
+.green_bar{
+  width: 100%;
+  height:100px;
+  background-color: #009688;
+}
+
+.grey_space{
+  width: 100%;
+  height:90vh;
+  background-color: #DBDBD3;
+}
+
+.container{
+  position:absolute; /*absolute relativo al primo relative che trova ovvero body*/
+  width: 900px;
+  height:600px;
+  left:50%;
+  top:5%;
+  transform: translateX(-50%);
+  background: red;
+}
