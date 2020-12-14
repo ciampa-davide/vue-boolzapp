@@ -86,7 +86,14 @@ var app = new Vue(
   			}
   		],
   	},
-  ]
-    }
+  ],
+  otherUser:{}
+},
+    methods: {
+
+      selectUser: function(index){
+        this.otherUser = this.contacts[index];
+        console.log(this.otherUser);
+      }
   }
-)
+})

@@ -28,9 +28,9 @@
           <div class="contacts">
 
             <ul class="element">
-              <li v-for= "contact in contacts" >
+              <li v-for= "(contact, index) in contacts" @click="selectUser(index)" >
                 <img :src="contact.avatar">
-                <p>{{ contact.name }}</p>
+                <p> {{ contact.name }} </p>
               </li>
             </ul>
 
@@ -42,12 +42,11 @@
           </nav>
           <div class="center">
 
-            <ul v-for="contact in contacts[0]">
+            <ul>
+              <li v-for="message in otherUser.messages">
 
-              <li v-if="contact.messages.sent">
-
-                <p>{{ text }}</p>
-
+                <p v-if="message.status == 'received'" class="white">{{message.text}}</p>
+                <p v-else class="green">{{message.text}}</p>
               </li>
 
             </ul>
