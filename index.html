@@ -2,9 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+      <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.css" integrity="sha512-f73UKwzP1Oia45eqHpHwzJtFLpvULbhVpEJfaWczo/ZCV5NWSnK4vLDnjTaMps28ocZ05RbI83k2RlQH92zy7A==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <title></title>
   </head>
   <body>
@@ -13,7 +13,9 @@
       <div class="grey_space"></div>
       <div class="container">
         <div class="left">
-          <nav class="top"></nav>
+          <nav class="top">
+
+          </nav>
           <div class="notifications"></div>
           <nav class="search">
             <div class="icon">
@@ -25,19 +27,41 @@
           </nav>
           <div class="contacts">
 
-            <ul>
-              <li v-for: "contact in contacts" >
+            <ul class="element">
+              <li v-for= "contact in contacts" >
                 <img :src="contact.avatar">
-                <span>{{contact.name}}</span>
+                <p>{{ contact.name }}</p>
               </li>
             </ul>
 
           </div>
         </div>
         <div class="right">
-          <nav class="top"></nav>
-          <div class="center"></div>
-          <div class="bottom"></div>
+          <nav class="top">
+
+          </nav>
+          <div class="center">
+
+            <ul v-for="contact in contacts[0]">
+
+              <li v-if="contact.messages.sent">
+
+                <p>{{ text }}</p>
+
+              </li>
+
+            </ul>
+
+          </div>
+          <div class="bottom">
+            <div class="emoji">
+              <i class="far fa-smile"></i>
+            </div>
+            <input type="text" name="" value="" placeholder="Scrivi il messaggio">
+            <div class="microphone">
+              <i class="fas fa-microphone"></i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
